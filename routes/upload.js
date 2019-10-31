@@ -83,15 +83,9 @@ app.put('/:tipo/:id', (req, res, next) => {
         //     mensaje: 'Archivo movido',
         //     extensionArchivo: extensionArchivo
         // });
-
-
     })
 
-
-
 });
-
-
 
 function subirPorTipo(tipo, id, nombreArchivo, res) {
 
@@ -111,9 +105,9 @@ function subirPorTipo(tipo, id, nombreArchivo, res) {
             var pathViejo = './uploads/usuarios/' + usuario.img;
 
             // Si existe, elimina la imagen anterior
-            if (fs.existsSync(pathViejo)) {
-                fs.unlink(pathViejo);
-            }
+            // if (fs.existsSync(pathViejo)) {
+              //  fs.unlink(pathViejo);
+            // }
 
             usuario.img = nombreArchivo;
 
@@ -160,7 +154,7 @@ function subirPorTipo(tipo, id, nombreArchivo, res) {
                 return res.status(200).json({
                     ok: true,
                     mensaje: 'Imagen de médico actualizada',
-                    usuario: medicoActualizado
+                    medico: medicoActualizado
                 });
 
             })
@@ -194,7 +188,7 @@ function subirPorTipo(tipo, id, nombreArchivo, res) {
                 return res.status(200).json({
                     ok: true,
                     mensaje: 'Imagen de hospital actualizada',
-                    usuario: hospitalActualizado
+                    hospital: hospitalActualizado
                 });
 
             })

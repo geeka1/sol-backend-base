@@ -58,7 +58,9 @@ app.post('/google', (req, res) => {
 
                 if (usuario) {
 
+                    //
                     if (usuario.google === false) {
+                        //Si el usuario no fue atenticado con google
                         return res.status(400).json({
                             ok: true,
                             mensaje: 'Debe de usar su autenticación normal'
